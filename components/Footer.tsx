@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, ArrowUp } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/lib/LanguageContext";
+import { showProjectsSection } from "@/lib/featureFlags";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -74,14 +75,16 @@ export default function Footer() {
                   {t("footer.about")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/#projects"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-                >
-                  {t("footer.projects")}
-                </Link>
-              </li>
+              {showProjectsSection && (
+                <li>
+                  <Link
+                    href="/#projects"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+                  >
+                    {t("footer.projects")}
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link
                   href="/#blog"
@@ -97,14 +100,16 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-4">{t("footer.pages")}</h4>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/projects"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-                >
-                  {t("footer.allProjects")}
-                </Link>
-              </li>
+              {showProjectsSection && (
+                <li>
+                  <Link
+                    href="/projects"
+                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+                  >
+                    {t("footer.allProjects")}
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link
                   href="/blog"

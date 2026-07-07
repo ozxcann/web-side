@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Home, Code2, User, Layers, FolderGit2, BookOpen, Mail, Blinds } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
+import { showProjectsSection } from "@/lib/featureFlags";
 
 interface MenuItem {
   id: string;
@@ -36,11 +37,15 @@ const menuItems: MenuItem[] = [
     titleKey: "sidebar.skills",
     icon: Layers,
   },
-  {
-    id: "projects",
-    titleKey: "sidebar.projects",
-    icon: FolderGit2,
-  },
+  ...(showProjectsSection
+    ? [
+        {
+          id: "projects",
+          titleKey: "sidebar.projects",
+          icon: FolderGit2,
+        },
+      ]
+    : []),
   {
     id: "blog",
     titleKey: "sidebar.blog",

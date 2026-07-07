@@ -8,11 +8,12 @@ import LanguageToggle from "./LanguageToggle";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/LanguageContext";
 import { replayBoot } from "@/lib/bootGate";
+import { showProjectsSection } from "@/lib/featureFlags";
 
 const NAV_ITEMS = [
   { href: "/", labelKey: "navbar.home" },
   { href: "/about", labelKey: "navbar.about" },
-  { href: "/projects", labelKey: "navbar.projects" },
+  ...(showProjectsSection ? [{ href: "/projects", labelKey: "navbar.projects" }] : []),
   { href: "/blog", labelKey: "navbar.blog" },
   { href: "/contact", labelKey: "navbar.contact" },
 ];

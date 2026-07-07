@@ -20,6 +20,7 @@ import posts from "@/informationData/blogs";
 import Footer from "@/components/Footer";
 import { openCvModal } from "@/components/CvDownloadModal";
 import { useLanguage } from "@/lib/LanguageContext";
+import { showProjectsSection } from "@/lib/featureFlags";
 
 const techStack = [
   // --- Yazılım Geliştirme (Software Development) ---
@@ -345,82 +346,84 @@ export default function HomeContent(_props: HomeContentProps) {
             </div>
           </section>
 
-          <section
-            id="projects"
-            className="space-y-10"
-          >
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-3xl">
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/90 px-4 py-2 text-sm font-semibold text-indigo-800 dark:border-indigo-400/20 dark:bg-indigo-400/10 dark:text-indigo-200">
-                  <Code2 className="h-4 w-4" />
-                  {t("home.projects.eyebrow")}
+          {showProjectsSection && (
+            <section
+              id="projects"
+              className="space-y-10"
+            >
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                <div className="max-w-3xl">
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/90 px-4 py-2 text-sm font-semibold text-indigo-800 dark:border-indigo-400/20 dark:bg-indigo-400/10 dark:text-indigo-200">
+                    <Code2 className="h-4 w-4" />
+                    {t("home.projects.eyebrow")}
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
+                    {t("home.projects.title")}
+                  </h2>
+                  <p className="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+                    {t("home.projects.description")}
+                  </p>
                 </div>
-                <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
-                  {t("home.projects.title")}
-                </h2>
-                <p className="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
-                  {t("home.projects.description")}
-                </p>
-              </div>
-              <Link
-                href="/projects"
-                className="group inline-flex items-center gap-2 self-start rounded-xl border border-slate-200 bg-white/75 px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-700 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:hover:border-sky-400/40 dark:hover:text-sky-200"
-              >
-                {t("home.projects.viewAll")}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              {projects.slice(0, 4).map((project, index) => (
-                <article
-                  key={project.slug}
-                  className="group overflow-hidden rounded-3xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.055] dark:hover:border-sky-400/30"
+                <Link
+                  href="/projects"
+                  className="group inline-flex items-center gap-2 self-start rounded-xl border border-slate-200 bg-white/75 px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-700 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-100 dark:hover:border-sky-400/40 dark:hover:text-sky-200"
                 >
-                  <Link href={`/projects/${project.slug}`} className="block">
-                    <div className="border-b border-slate-200 bg-slate-950 p-4 dark:border-white/10">
-                      <div className="mb-4 flex items-center gap-2">
-                        <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                        <span className="ml-auto text-xs font-semibold text-slate-500">/{String(index + 1).padStart(2, "0")}</span>
+                  {t("home.projects.viewAll")}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                {projects.slice(0, 4).map((project, index) => (
+                  <article
+                    key={project.slug}
+                    className="group overflow-hidden rounded-3xl border border-slate-200 bg-white/85 shadow-sm transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.055] dark:hover:border-sky-400/30"
+                  >
+                    <Link href={`/projects/${project.slug}`} className="block">
+                      <div className="border-b border-slate-200 bg-slate-950 p-4 dark:border-white/10">
+                        <div className="mb-4 flex items-center gap-2">
+                          <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                          <span className="ml-auto text-xs font-semibold text-slate-500">/{String(index + 1).padStart(2, "0")}</span>
+                        </div>
+                        <div className="grid gap-2">
+                          <div className="h-2.5 w-2/3 rounded-full bg-sky-300/70" />
+                          <div className="h-2.5 w-full rounded-full bg-white/12" />
+                          <div className="h-2.5 w-4/5 rounded-full bg-white/12" />
+                        </div>
                       </div>
-                      <div className="grid gap-2">
-                        <div className="h-2.5 w-2/3 rounded-full bg-sky-300/70" />
-                        <div className="h-2.5 w-full rounded-full bg-white/12" />
-                        <div className="h-2.5 w-4/5 rounded-full bg-white/12" />
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <div className="mb-4 flex flex-wrap items-center gap-2">
-                        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-white/10 dark:text-slate-200">
-                          {project.category ?? t("home.projects.defaultCategory")}
-                        </span>
-                        {project.technologies.slice(0, 3).map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-500 dark:border-white/10 dark:text-slate-400"
-                          >
-                            {tech}
+                      <div className="p-6">
+                        <div className="mb-4 flex flex-wrap items-center gap-2">
+                          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-white/10 dark:text-slate-200">
+                            {project.category ?? t("home.projects.defaultCategory")}
                           </span>
-                        ))}
+                          {project.technologies.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech}
+                              className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-500 dark:border-white/10 dark:text-slate-400"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-950 transition group-hover:text-sky-700 dark:text-white dark:group-hover:text-sky-200">
+                          {project.title}
+                        </h3>
+                        <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                          {project.description}
+                        </p>
+                        <div className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sky-700 dark:text-sky-300">
+                          {t("home.projects.explore")}
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </div>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-950 transition group-hover:text-sky-700 dark:text-white dark:group-hover:text-sky-200">
-                        {project.title}
-                      </h3>
-                      <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                        {project.description}
-                      </p>
-                      <div className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sky-700 dark:text-sky-300">
-                        {t("home.projects.explore")}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </Link>
-                </article>
-              ))}
-            </div>
-          </section>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section
             id="blog"
