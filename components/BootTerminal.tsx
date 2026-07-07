@@ -60,12 +60,10 @@ export default function BootTerminal() {
 
     if (consumeReplayPending()) {
       startReplay();
-    } else if (isHomePage) {
+    } else if (isHomePage && !hasSeenBoot()) {
       startReplay();
-    } else if (!hasSeenBoot()) {
-      setActive(true);
     } else {
-      // Already seen — don't block the homepage caption gate.
+      // Already seen or not on the homepage — don't replay the intro automatically.
       markBootDismissed();
     }
   }, []);
