@@ -57,19 +57,38 @@ export default function BootTerminal() {
   // On mount: replay if the navbar requested it on another page. On the homepage
   // we also trigger the intro for both desktop and mobile visitors so the debut
   // experience is always available when landing on the main page.
-  useEffect(() => {
-    const isHomePage = typeof window !== "undefined" && window.location.pathname === "/";
+ useEffect(() => {
+  const isHomePage = typeof window !== "undefined" && window.location.pathname === "/";
 
-    if (consumeReplayPending()) {
-      startReplay();
-    } else if (isHomePage && !hasSeenBoot() && !hasAutoShownBoot()) {
+  // Sayfa sert bir şekilde yenilendi mi veya tarayıcıya adres yazılarak mı girildi?
+  const isHardLoad =
+    typeof window !== "undefined" &&
+    window.performance &&
+    window.performance.getEntriesByType("navigation")[0]?.['type'] !== "navigate" 
+      ? false // Eğer SPA içi geçişse veya farklı bir durumsa
+      : true;
+
+  // Navbar'dan yönlendirilen özel durum (mevcut kodundaki mantık)
+  if (consumeReplayPending()) {
+    startReplay();
+  } 
+  // Sadece ana sayfadaysak VE sayfa tarayıcı bazında ilk kez/sıfırdan yüklendiyse çalıştır
+  else if (isHomePage && isHardLoad) {
+    // Sayfa içi sonraki geçişlerde tetiklenmesin diye tarayıcı geçmişine (history) küçük bir bayrak bırakıyoruz
+    const hasNavigatedInApp = window.history.state?.hasNavigatedInApp;
+    
+    if (!hasNavigatedInApp) {
+      // İlk yüklenme durumunda tarayıcı state'ine bu bayrağı gömüyoruz
+      window.history.replaceState({ ...window.history.state, hasNavigatedInApp: true }, "");
       markBootAutoShown();
       startReplay();
     } else {
-      // Already seen or not on the homepage — don't replay the intro automatically.
       markBootDismissed();
     }
-  }, []);
+  } else {
+    markBootDismissed();
+  }
+}, []);
 
   // Allow the navbar "Intro" button to replay the terminal on demand
   // (same-page case, terminal already mounted).
