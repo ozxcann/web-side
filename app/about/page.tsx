@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <div className="relative rounded-3xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl bg-gray-200 dark:bg-gray-800 aspect-[3/4]">
                   {/* Image */}
                   <Image
-                    src="\folder\my-character.png"
+                    src="/folder/my-character.png"
                     alt="SELAMİ ÖZCAN"
                     fill
                     className="object-cover object-top"
