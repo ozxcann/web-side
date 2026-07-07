@@ -184,38 +184,44 @@ export default function AboutPage() {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-6 shadow-sm dark:border-slate-700/70 dark:bg-slate-800/40">
-                <div className="mb-5 flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600 dark:text-sky-400">
-                      {t("aboutPage.profile.summaryLabel")}
-                    </p>
-                    <h3 className="mt-2 text-xl font-semibold text-gray-900 dark:text-white">
-                      {t("aboutPage.profile.summaryTitle")}
-                    </h3>
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-sm font-semibold text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
-                    <Sparkles className="h-4 w-4" />
-                    {t("aboutPage.profile.summaryBadge")}
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  {ab.profile.metrics.map((metric) => (
-                    <div key={metric.label}>
-                      <div className="mb-2 flex items-center justify-between text-sm">
-                        <span className="font-medium text-gray-700 dark:text-gray-200">{metric.label}</span>
-                        <span className="font-semibold text-sky-600 dark:text-sky-300">{metric.value}</span>
-                      </div>
-                      <div className="h-2.5 w-full rounded-full bg-slate-200 dark:bg-slate-700">
-                        <div
-                          className="h-2.5 rounded-full bg-gradient-to-r from-sky-500 via-cyan-500 to-indigo-500"
-                          style={{ width: metric.percent }}
-                        />
-                      </div>
-                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{metric.note}</p>
+              <div className="relative overflow-hidden rounded-[24px] border border-slate-200/80 bg-slate-50/80 p-6 shadow-sm dark:border-slate-700/70 dark:bg-slate-800/40">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_50%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.12),transparent_50%)]" />
+                <div className="relative">
+                  <div className="mb-5 flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600 dark:text-sky-400">
+                        {t("aboutPage.profile.summaryLabel")}
+                      </p>
+                      <h3 className="mt-2 text-xl font-semibold text-gray-900 dark:text-white">
+                        {t("aboutPage.profile.summaryTitle")}
+                      </h3>
                     </div>
-                  ))}
+                    <div className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-sm font-semibold text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
+                      <Sparkles className="h-4 w-4" />
+                      {t("aboutPage.profile.summaryBadge")}
+                    </div>
+                  </div>
+
+                  <div className="relative mt-6 rounded-2xl border border-white/70 bg-white/70 p-4 shadow-inner dark:border-slate-700/70 dark:bg-slate-900/40">
+                    <div className="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,rgba(56,189,248,0.08),transparent_45%,rgba(168,85,247,0.08))]" />
+                    <div className="relative space-y-4">
+                      {ab.profile.metrics.map((metric) => (
+                        <div key={metric.label}>
+                          <div className="mb-2 flex items-center justify-between text-sm">
+                            <span className="font-medium text-gray-700 dark:text-gray-200">{metric.label}</span>
+                            <span className="font-semibold text-sky-600 dark:text-sky-300">{metric.value}</span>
+                          </div>
+                          <div className="h-2.5 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                            <div
+                              className="h-2.5 rounded-full bg-gradient-to-r from-sky-500 via-cyan-500 to-indigo-500"
+                              style={{ width: metric.percent }}
+                            />
+                          </div>
+                          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{metric.note}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
