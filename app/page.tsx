@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import SidebarMenu from "@/components/SidebarMenu";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import BootTerminal from "@/components/BootTerminal";
 import HomeContent from "@/components/HomeContent";
 import { onBootDismissed } from "@/lib/bootGate";
 
@@ -30,7 +29,6 @@ export default function HomePage() {
           <ScrollToTopButton />
         </>
       ) : null}
-      <BootTerminal />
     </>
   );
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ThemeProvider from "@/components/ThemeProvider";
 import CvDownloadModal from "@/components/CvDownloadModal";
+import BootTerminal from "@/components/BootTerminal";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             <Navbar />
+            <BootTerminal />
             <main className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8">{children}</main>
             <CvDownloadModal />
           </LanguageProvider>
