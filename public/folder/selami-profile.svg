@@ -1,0 +1,26 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="face" x1="600" y1="300" x2="600" y2="1300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffe4c7"/>
+      <stop offset="100%" stop-color="#f6bd93"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="400" y1="1200" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" rx="120" fill="url(#bg)"/>
+  <circle cx="600" cy="520" r="340" fill="url(#face)"/>
+  <path d="M260 1380C260 1124 419.166 938 600 938C780.834 938 940 1124 940 1380H260Z" fill="#14172b" opacity="0.18"/>
+  <path d="M520 760C520 760 550 720 600 720C650 720 680 760 680 760" stroke="#1f2937" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="500" cy="560" r="34" fill="#1f2937"/>
+  <circle cx="700" cy="560" r="34" fill="#1f2937"/>
+  <path d="M500 720C500 760 560 780 600 780C640 780 700 760 700 720" stroke="#1f2937" stroke-width="28" stroke-linecap="round"/>
+  <path d="M420 380C420 320 500 260 600 260C700 260 780 320 780 380C780 440 700 500 600 500C500 500 420 440 420 380Z" fill="#fcd34d" opacity="0.35"/>
+  <path d="M260 1420C260 1310 340 1240 450 1240H750C860 1240 940 1310 940 1420V1490H260V1420Z" fill="url(#accent)" opacity="0.95"/>
+  <text x="600" y="1520" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="88" font-weight="700">SELAMI</text>
+</svg>
