@@ -55,6 +55,19 @@ export function markBootSeen(): void {
   }
 }
 
+const AUTO_SHOW_KEY = "bootAutoShown";
+
+export function hasAutoShownBoot(): boolean {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem(AUTO_SHOW_KEY) === "1";
+}
+
+export function markBootAutoShown(): void {
+  if (typeof window !== "undefined") {
+    localStorage.setItem(AUTO_SHOW_KEY, "1");
+  }
+}
+
 // --- 3D scene warm-up gating ------------------------------------------------
 
 // The full-screen loading cover (0→100) plays only the FIRST time the 3D scene

@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import {
   consumeReplayPending,
+  hasAutoShownBoot,
   hasSeenBoot,
   markBootActive,
+  markBootAutoShown,
   markBootDismissed,
   markBootSeen,
   onBootReplay,
@@ -60,7 +62,8 @@ export default function BootTerminal() {
 
     if (consumeReplayPending()) {
       startReplay();
-    } else if (isHomePage && !hasSeenBoot()) {
+    } else if (isHomePage && !hasSeenBoot() && !hasAutoShownBoot()) {
+      markBootAutoShown();
       startReplay();
     } else {
       // Already seen or not on the homepage — don't replay the intro automatically.
