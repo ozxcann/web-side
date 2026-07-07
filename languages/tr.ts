@@ -78,6 +78,9 @@ export const tr = {
       getInContact: "İletişime Geç",
       cv: "CV",
       stats: {
+        projectsValue: "20+",
+        stackFocusValue: "Full",
+        computerEngValue: "B.Sc.",
         projects: "Proje & Etkinlik",
         stackFocus: "SQL & Analiz",
         computerEng: "Bilişim Sis. ve Tek.",

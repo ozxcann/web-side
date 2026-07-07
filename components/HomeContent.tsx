@@ -47,10 +47,9 @@ const techStack = [
 
 const heroStats = [
   { value: "20+", labelKey: "home.hero.stats.projects" },
-  { value: "Full", labelKey: "home.hero.stats.stackFocus" },
-  { value: "B.Sc.", labelKey: "home.hero.stats.computerEng" },
+  { value: "BA", labelKey: "home.hero.stats.stackFocus" },
+  { value: "CTIS", labelKey: "home.hero.stats.computerEng" },
 ];
-
 const skillCards = [
   {
     id: "fullstack",
@@ -233,7 +232,7 @@ export default function HomeContent(_props: HomeContentProps) {
                     key={stat.labelKey}
                     className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.06]"
                   >
-                    <p className="text-2xl font-bold text-slate-950 dark:text-white">{stat.value}</p>
+                    <p className="text-2xl font-bold text-slate-950 dark:text-white">{t(stat.valueKey)}</p>
                     <p className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">{t(stat.labelKey)}</p>
                   </div>
                 ))}

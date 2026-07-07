@@ -79,6 +79,9 @@ const en: Translations = {
       getInContact: "Get in Contact",
       cv: "CV",
       stats: {
+        projectsValue: "20+",
+        stackFocusValue: "Full",
+        computerEngValue: "B.Sc.",
         projects: "Project & Event",
         stackFocus: "SQL & Analysis",
         computerEng: "Info. Sys. & Tech.",
