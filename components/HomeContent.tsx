@@ -286,7 +286,7 @@ export default function HomeContent(_props: HomeContentProps) {
                 <div>
                   <div className="flex items-center gap-4">
                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-2xl font-black text-white shadow-lg">
-                      ÖD
+                      SÖ
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-slate-950 dark:text-white">Selami Özcan</h3>
