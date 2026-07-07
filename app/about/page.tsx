@@ -151,7 +151,7 @@ export default function AboutPage() {
                   {/* Image */}
                   <Image
                     src="/folder/my-character.png"
-                    alt="selami özcan"
+                    alt="SELAMİ ÖZCAN"
                     fill
                     className="object-cover object-top"
                     priority
