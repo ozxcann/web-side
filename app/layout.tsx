@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "selami özcan | Portfolio",
-  description: "Personal portfolio built with Next.js, Tailwind CSS and Framer Motion",
+  title: "Selami Özcan | Portfolio",
+  description: "Personal portfolio built with Bussiness Analysis, Data Analysis, and Full-Stack Development skills.",
 };
 
 export const viewport: Viewport = {
