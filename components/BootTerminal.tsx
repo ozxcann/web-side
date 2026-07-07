@@ -52,10 +52,15 @@ export default function BootTerminal() {
     setActive(true);
   };
 
-  // On mount: replay if the navbar requested it on another page, else auto-play
-  // once per session (first homepage mount this session). storage is client-only.
+  // On mount: replay if the navbar requested it on another page. On the homepage
+  // we also trigger the intro for both desktop and mobile visitors so the debut
+  // experience is always available when landing on the main page.
   useEffect(() => {
+    const isHomePage = typeof window !== "undefined" && window.location.pathname === "/";
+
     if (consumeReplayPending()) {
+      startReplay();
+    } else if (isHomePage) {
       startReplay();
     } else if (!hasSeenBoot()) {
       setActive(true);
