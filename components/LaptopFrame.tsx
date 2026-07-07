@@ -412,7 +412,7 @@ export default function LaptopFrame({ expandedSkill, setExpandedSkill }: LaptopF
   const outroOpacity = useTransform(scrollYProgress, [CLOSE_START + 0.07, 0.95, 1], [0, 0.9, 1]);
   const screenHudOpacity = useTransform(scrollYProgress, [OPEN_END * 0.72, OPEN_END, CLOSE_START, CLOSE_START + 0.08], [0, 1, 1, 0]);
 
-  if (level === "LOW" || prefersReducedMotion) {
+  if (prefersReducedMotion) {
     return <HomeContent expandedSkill={expandedSkill} setExpandedSkill={setExpandedSkill} />;
   }
 

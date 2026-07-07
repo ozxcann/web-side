@@ -1,10 +1,16 @@
 "use client";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import SidebarMenu from "@/components/SidebarMenu";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import BootTerminal from "@/components/BootTerminal";
-import HomeContent from "@/components/HomeContent";
+import LaptopLoadingFallback from "@/components/LaptopLoadingFallback";
+
+const LaptopFrame = dynamic(() => import("@/components/LaptopFrame"), {
+  ssr: false,
+  loading: () => <LaptopLoadingFallback />,
+});
 
 export default function HomePage() {
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
@@ -13,9 +19,7 @@ export default function HomePage() {
     <>
       <AnimatedBackground />
       <SidebarMenu onSkillSelect={(skillId) => setExpandedSkill(skillId)} />
-      <div className="home-fallback-wrapper">
-        <HomeContent expandedSkill={expandedSkill} setExpandedSkill={setExpandedSkill} />
-      </div>
+      <LaptopFrame expandedSkill={expandedSkill} setExpandedSkill={setExpandedSkill} />
       <ScrollToTopButton />
       <BootTerminal />
     </>
