@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Prevent font size adjustments on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Base font optimized for 80% zoom level */
+  font-size: 12.8px;
+}
+
+/* Light theme - sayfa beyaz, navbar daha beyaz */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GPU acceleration for common animated elements */
+[class*="motion-"],
+[class*="animate-"],
+.transform,
+.transition {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+:root {
+  --bg-page: #ffffff;
+  --bg-navbar: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border: #e2e8f0;
+}
+
+/* Dark theme - sayfa koyu gri, navbar daha siyah */
+.dark {
+  --bg-page: #0a0a0a;
+  --bg-navbar: #000000;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border: #1e293b;
+}
+
+/* Infinite scroll animation for tech stack */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Blinking caret for the code editor typing effect */
+@keyframes caret {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-caret {
+  animation: caret 1s step-end infinite;
+}
+
+/* Glassmorphism card surface */
+.glass {
+  background-color: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.dark .glass {
+  background-color: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+}
+
+/* drei <Html> wrapper for the 3D laptop screen — keep content from
+   intercepting scroll/pointer so the page scroll keeps driving the scene */
+.laptop-screen-html {
+  pointer-events: none !important;
+}
+
+.laptop-screen-content {
+  backface-visibility: hidden;
+  contain: layout paint style;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.home-fallback-wrapper {
+  opacity: 0;
+  transform: scale(0.98);
+  animation: fade-scale 420ms ease-out forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Intro / outro captions styled like the green terminal boot screen.
+   Large, glowing monospace that fills the empty space above the model. */
+.laptop-caption {
+  text-shadow: 0 0 18px rgba(14, 165, 233, 0.35);
+}
+
+.laptop-caption-kicker {
+  font-size: clamp(0.85rem, 1.8vw, 1.35rem);
+}
+
+.laptop-caption-title {
+  font-size: clamp(1.6rem, 5.5vw, 4rem);
+  line-height: 1.05;
+}
+
+.laptop-caption-caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.12em;
+  vertical-align: text-bottom;
+  background: currentColor;
+  animation: caret 1s step-end infinite;
+}
+
+/* While typing, keep the caret solid (no blink) for a steadier feel. */
+.laptop-caption-caret--solid {
+  animation: none;
+}
