@@ -322,13 +322,14 @@ export default function HomeContent(_props: HomeContentProps) {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-gradient-to-br from-sky-50 via-white to-violet-50 p-6 shadow-sm dark:border-white/10 dark:from-sky-950/30 dark:via-slate-900 dark:to-violet-950/30 sm:p-8">
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-sky-50 via-white to-violet-50 shadow-sm dark:border-white/10 dark:from-sky-950/30 dark:via-slate-900 dark:to-violet-950/30">
+              <div className="flex flex-col gap-5 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
                 <div className="max-w-2xl">
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-600 dark:text-sky-400">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-700 backdrop-blur-sm dark:border-sky-400/20 dark:bg-slate-800/70 dark:text-sky-300">
+                    <span className="h-2 w-2 rounded-full bg-sky-500" />
                     {t("aboutPage.profile.heading")}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
+                  </div>
+                  <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-white">
                     {t("aboutPage.profile.summaryTitle")}
                   </h3>
                   <p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">
@@ -337,7 +338,7 @@ export default function HomeContent(_props: HomeContentProps) {
                 </div>
                 <a
                   href="/about"
-                  className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sky-700 dark:bg-white dark:text-slate-950 dark:hover:bg-sky-100"
+                  className="inline-flex items-center justify-center rounded-xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-sky-700 dark:bg-white dark:text-slate-950 dark:hover:bg-sky-100"
                 >
                   {t("home.about.learnMore")}
                 </a>
