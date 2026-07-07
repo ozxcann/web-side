@@ -14,6 +14,12 @@ import {
   TrendingUp,
   Target,
   Download,
+  Brain,
+  Sparkles,
+  AlertTriangle,
+  Compass,
+  ShieldCheck,
+  Lightbulb,
 } from "lucide-react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -153,6 +159,123 @@ export default function AboutPage() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Personal Profile & Managerial Competencies */}
+        <motion.section
+          variants={itemVariants}
+          className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/80 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/70 dark:bg-slate-900/50 md:p-8"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.14),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(129,140,248,0.16),transparent_45%)]" />
+          <div className="relative space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 p-3 shadow-lg">
+                <Brain className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                  {t("aboutPage.profile.heading")}
+                </h2>
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  {t("aboutPage.profile.intro")}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-6 shadow-sm dark:border-slate-700/70 dark:bg-slate-800/40">
+                <div className="mb-5 flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600 dark:text-sky-400">
+                      {t("aboutPage.profile.summaryLabel")}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold text-gray-900 dark:text-white">
+                      {t("aboutPage.profile.summaryTitle")}
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-sm font-semibold text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
+                    <Sparkles className="h-4 w-4" />
+                    {t("aboutPage.profile.summaryBadge")}
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  {ab.profile.metrics.map((metric) => (
+                    <div key={metric.label}>
+                      <div className="mb-2 flex items-center justify-between text-sm">
+                        <span className="font-medium text-gray-700 dark:text-gray-200">{metric.label}</span>
+                        <span className="font-semibold text-sky-600 dark:text-sky-300">{metric.value}</span>
+                      </div>
+                      <div className="h-2.5 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+                        <div
+                          className="h-2.5 rounded-full bg-gradient-to-r from-sky-500 via-cyan-500 to-indigo-500"
+                          style={{ width: metric.percent }}
+                        />
+                      </div>
+                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{metric.note}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    titleKey: "aboutPage.profile.strengths.title",
+                    itemsKey: "aboutPage.profile.strengths.items",
+                    icon: Lightbulb,
+                    badgeClass: "from-emerald-500 to-teal-500",
+                    textClass: "text-emerald-700 dark:text-emerald-300",
+                  },
+                  {
+                    titleKey: "aboutPage.profile.weaknesses.title",
+                    itemsKey: "aboutPage.profile.weaknesses.items",
+                    icon: AlertTriangle,
+                    badgeClass: "from-amber-500 to-orange-500",
+                    textClass: "text-amber-700 dark:text-amber-300",
+                  },
+                  {
+                    titleKey: "aboutPage.profile.opportunities.title",
+                    itemsKey: "aboutPage.profile.opportunities.items",
+                    icon: Compass,
+                    badgeClass: "from-sky-500 to-blue-500",
+                    textClass: "text-sky-700 dark:text-sky-300",
+                  },
+                  {
+                    titleKey: "aboutPage.profile.threats.title",
+                    itemsKey: "aboutPage.profile.threats.items",
+                    icon: ShieldCheck,
+                    badgeClass: "from-rose-500 to-pink-500",
+                    textClass: "text-rose-700 dark:text-rose-300",
+                  },
+                ].map((card) => {
+                  const Icon = card.icon;
+                  const items = t(card.itemsKey).split("||") as string[];
+                  return (
+                    <div
+                      key={card.titleKey}
+                      className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm dark:border-slate-700/70 dark:bg-slate-800/60"
+                    >
+                      <div className={`inline-flex rounded-xl bg-gradient-to-br ${card.badgeClass} p-2.5`}>
+                        <Icon className="h-4 w-4 text-white" />
+                      </div>
+                      <h3 className="mt-3 text-base font-semibold text-gray-900 dark:text-white">
+                        {t(card.titleKey)}
+                      </h3>
+                      <ul className="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        {items.map((item) => (
+                          <li key={item} className="flex gap-2">
+                            <CheckCircle2 className={`mt-0.5 h-4 w-4 flex-none ${card.textClass}`} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </motion.section>
 

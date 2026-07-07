@@ -262,6 +262,37 @@ const en: Translations = {
     role: "Business Analyst",
     intro:
       "Hello, I'm Selami Özcan. I graduated from Trakya University, Information Systems and Technologies. I gained hands-on experience in corporate business analysis processes as a Business Analyst Intern at Türkiye Finans Katılım Bankası. I supported Agile Scrum workflows with requirements gathering, process modeling, SQL Server database querying, and UAT execution. I continue to stay current with certifications in AI, deep learning, API test automation, and Geographic Information Systems.",
+    profile: {
+      heading: "Personal Profile & Managerial Competencies",
+      intro:
+        "A balanced approach focused on seeing the big picture, communicating strongly, adapting quickly, and managing pressure with resilience.",
+      summaryLabel: "Personal Profile",
+      summaryTitle: "Strategic and Visionary Approach",
+      summaryBadge: "Highlight",
+      metrics: [
+        { label: "Strategic and Visionary Approach", value: "%77", percent: "77%", note: "Intuitive" },
+        { label: "Strong Stakeholder Communication", value: "%74", percent: "74%", note: "Extroverted" },
+        { label: "Stress Management and Resilience", value: "%63", percent: "63%", note: "Confident" },
+        { label: "Analytical Decision Mechanism", value: "%57", percent: "57%", note: "Logical" },
+        { label: "Agility and Adaptation", value: "%54", percent: "54%", note: "Research-oriented" },
+      ],
+      strengths: {
+        title: "Strengths",
+        items: "Innovation and Idea Generation||Fast Learning and Adaptation||High Persuasion Ability||Crisis and Improvisation Management",
+      },
+      weaknesses: {
+        title: "Weaknesses",
+        items: "Routine and Detail Orientation||Risk of Leaving Projects Half-Done||Reactions to Authority and Rules||Neglect of Emotional Awareness",
+      },
+      opportunities: {
+        title: "Opportunities",
+        items: "Entrepreneurship and Agile Environments||Interdisciplinary Transition||Open-minded Experimentation",
+      },
+      threats: {
+        title: "Threats",
+        items: "Burnout||Micro-Management Pressure||Monkey Trap Syndrome",
+      },
+    },
     stats: {
       experience: "Hands-on Internship",
       projects: "Community Leadership",

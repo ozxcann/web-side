@@ -261,6 +261,37 @@ export const tr = {
     role: "Business Analyst",
     intro:
       "Merhaba, ben Selami Özcan. Trakya Üniversitesi Bilişim Sistemleri ve Teknolojileri mezunuyum. Türkiye Finans Katılım Bankası'nda Business Analyst Intern olarak kurumsal iş analizi süreçlerine dahil oldum. Gereksinim toplama, süreç modelleme, SQL Server sorgulama ve UAT yürütme faaliyetlerinde çevik (Scrum) yaklaşımla katkı sağladım. Yapay zeka, derin öğrenme, API test otomasyonu ve Coğrafi Bilgi Sistemleri sertifikalarıyla kendimi güncel tutuyorum.",
+    profile: {
+      heading: "Kişisel Profil & Yönetimsel Yetkinlikler",
+      intro:
+        "Büyük resmi görme, güçlü iletişim, hızlı adaptasyon ve stres yönetimi gibi alanlarda güçlü bir denge kurmaya odaklanan yaklaşım.",
+      summaryLabel: "Kişisel Profil",
+      summaryTitle: "Stratejik ve Vizyoner Yaklaşım",
+      summaryBadge: "Öne Çıkan Özellik",
+      metrics: [
+        { label: "Stratejik ve Vizyoner Yaklaşım", value: "%77", percent: "77%", note: "Sezgisel" },
+        { label: "Güçlü Paydaş İletişimi", value: "%74", percent: "74%", note: "Dışadönük" },
+        { label: "Stres Yönetimi ve Dayanıklılık", value: "%63", percent: "63%", note: "Özgüvenli" },
+        { label: "Analitik Karar Mekanizması", value: "%57", percent: "57%", note: "Mantıklı" },
+        { label: "Çeviklik ve Adaptasyon", value: "%54", percent: "54%", note: "Araştırmacı" },
+      ],
+      strengths: {
+        title: "Güçlü Yönler",
+        items: "İnovasyon ve Fikir Üretimi||Hızlı Öğrenme ve Adaptasyon||Yüksek İkna Kabiliyeti||Kriz ve Doğaçlama Yönetimi",
+      },
+      weaknesses: {
+        title: "Zayıf Yönler",
+        items: "Rutin ve Detaycılık||Projeleri Yarım Bırakma Riski||Otorite ve Kurallara Reaksiyon||Duygusal Farkındalık İhmali",
+      },
+      opportunities: {
+        title: "Fırsatlar",
+        items: "Girişimcilik ve Çevik Ortamlar||Disiplinlerarası Geçiş||Açık Fikirli Deneycilik",
+      },
+      threats: {
+        title: "Tehditler",
+        items: "Zihinsel Tükenme||Mikro-Yönetim Baskısı||Maymun İştahlılık Sendromu",
+      },
+    },
     stats: {
       experience: "Uygulamalı Staj",
       projects: "Topluluk Liderliği",
