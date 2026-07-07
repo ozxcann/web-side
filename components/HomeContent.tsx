@@ -48,8 +48,9 @@ const techStack = [
 const heroStats = [
   { value: "20+", labelKey: "home.hero.stats.projects" },
   { value: "BA", labelKey: "home.hero.stats.stackFocus" },
-  { value: "CTIS", labelKey: "home.hero.stats.computerEng" },
+  { value: "CTIS", labelKey: "home.hero.stats.computerEng" } // CTIS (Bilişim Sistemleri ve Teknolojileri) değerine göre güncellendi
 ];
+
 const skillCards = [
   {
     id: "fullstack",
@@ -82,7 +83,6 @@ const skillCards = [
     ring: "hover:border-teal-400 dark:hover:border-teal-500",
   },
 ];
-
 type HomeContentProps = {
   onSkillSelect?: (skillId: string) => void;
   expandedSkill?: string | null;
