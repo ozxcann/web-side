@@ -79,8 +79,8 @@ export const tr = {
       cv: "CV",
       stats: {
         projectsValue: "20+",
-        stackFocusValue: "Full",
-        computerEngValue: "B.Sc.",
+        stackFocusValue: "BA",
+        computerEngValue: "CTIS",
         projects: "Proje & Etkinlik",
         stackFocus: "SQL & Analiz",
         computerEng: "Bilişim Sis. ve Tek.",

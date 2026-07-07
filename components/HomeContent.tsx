@@ -46,9 +46,9 @@ const techStack = [
 ];
 
 const heroStats = [
-  { value: "20+", labelKey: "home.hero.stats.projects" },
-  { value: "BA", labelKey: "home.hero.stats.stackFocus" },
-  { value: "CTIS", labelKey: "home.hero.stats.computerEng" } // CTIS (Bilişim Sistemleri ve Teknolojileri) değerine göre güncellendi
+  { valueKey: "home.hero.stats.projectsValue", labelKey: "home.hero.stats.projects" },
+  { valueKey: "home.hero.stats.stackFocusValue", labelKey: "home.hero.stats.stackFocus" },
+  { valueKey: "home.hero.stats.computerEngValue", labelKey: "home.hero.stats.computerEng" },
 ];
 
 const skillCards = [

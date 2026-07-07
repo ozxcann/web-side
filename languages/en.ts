@@ -80,8 +80,8 @@ const en: Translations = {
       cv: "CV",
       stats: {
         projectsValue: "20+",
-        stackFocusValue: "Full",
-        computerEngValue: "B.Sc.",
+        stackFocusValue: "BA",
+        computerEngValue: "CTIS",
         projects: "Project & Event",
         stackFocus: "SQL & Analysis",
         computerEng: "Info. Sys. & Tech.",
