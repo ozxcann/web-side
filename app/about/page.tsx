@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   User,
   Code2,
@@ -149,12 +148,10 @@ export default function AboutPage() {
                 {/* Image container */}
                 <div className="relative rounded-3xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl bg-gray-200 dark:bg-gray-800 aspect-[3/4]">
                   {/* Image */}
-                  <Image
+                  <img
                     src="/folder/my-character.png"
                     alt="SELAMİ ÖZCAN"
-                    fill
-                    className="object-cover object-top"
-                    priority
+                    className="h-full w-full object-cover object-top"
                   />
                 </div>
               </div>
