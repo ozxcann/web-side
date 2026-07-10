@@ -32,7 +32,7 @@ const OPTIONS = [
     code: "TR",
     variantKey: "cvModal.visual",
     variant: "visual" as const,
-    href: "/folder/SELAMI-ÖZCAN-CV-IMG-TURKCE.pdf",
+    href: "public\folder\SELAMI-ÖZCAN-CV-TURKCE.pdf",
     download: "SELAMI-OZCAN-CV-IMG-TR.pdf",
   },
   {
