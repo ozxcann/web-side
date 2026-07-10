@@ -21,7 +21,7 @@ export default function ContactPage() {
     e.preventDefault();
 
     // Create mailto link with form data
-    const mailtoLink = `mailto:selamiozcan.works@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:selamiozcan.work@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `${formData.message}\n\n---\n${t("contactPage.form.mailFrom")}: ${formData.name}\nEmail: ${formData.email}`
     )}`;
 
@@ -86,7 +86,7 @@ export default function ContactPage() {
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
             {/* Email Card */}
             <motion.a
-              href="mailto:selamiozcan.works@gmail.com"
+              href="mailto:selamiozcan.work@gmail.com"
               whileHover={{ y: -5 }}
               className="block p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 dark:from-sky-950/20 dark:to-blue-950/20 border border-sky-200 dark:border-sky-800 hover:shadow-xl transition-all group"
             >
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t("contactPage.cards.email")}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 break-all">
-                    selamiozcan.works@gmail.com
+                    selamiozcan.work@gmail.com
                   </p>
                 </div>
               </div>

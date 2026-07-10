@@ -193,7 +193,7 @@ export default function HomeContent(_props: HomeContentProps) {
                 {[
                   { href: "https://github.com/ozxcann", label: "GitHub", icon: FaGithub },
                   { href: "https://www.linkedin.com/in/selami-%C3%B6zcan/", label: "LinkedIn", icon: FaLinkedin },
-                  { href: "mailto:selamiozcan.works@gmail.com", label: "Email", icon: Mail },
+                  { href: "mailto:selamiozcan.work@gmail.com", label: "Email", icon: Mail },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (

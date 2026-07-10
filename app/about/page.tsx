@@ -723,7 +723,7 @@ export default function AboutPage() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="mailto:selamiozcan.works@gmail.com"
+                href="mailto:selamiozcan.work@gmail.com"
                 className="flex items-center gap-2 px-6 py-3 bg-white text-sky-600 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
               >
                 <Mail className="w-5 h-5" />
